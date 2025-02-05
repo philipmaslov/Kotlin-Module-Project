@@ -13,12 +13,12 @@ class Input {
                     input = scanner.nextLine().toInt()
                     if (input > menuSize) {
                         println("Такой пункт отсутствует")
-                        input = -11
+                        input = -1
                     }
                 } catch (e: Exception) {
                     println("Необоходимо ввести число.")
                 }
-            } while (input == -1)
+            } while (input < 0)
             return input
         }
 
