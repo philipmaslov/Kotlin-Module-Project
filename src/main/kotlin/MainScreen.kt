@@ -1,10 +1,11 @@
 class MainScreen() {
-
     private var screenType = ARCHIVE
     private val data = mutableMapOf<Archive, ArrayList<Note>>()
+    var isExit = false
+
     private lateinit var active: Archive //ссылка на архив для экрана с записями
 
-    fun showMenu() {
+    fun showMenu(screenType: List<String> = this.screenType) {
         val caption = "_______ Меню ${screenType[2].lowercase()} _______"
         val firstItem = "Создать ${screenType[1].lowercase()}"
         val lastItem = "Выйти"
@@ -98,7 +99,5 @@ class MainScreen() {
         const val TEXT_MAX_LENGTH = 1024
         val ARCHIVE = listOf("Архив", "Архива", "Архивов")
         val NOTE = listOf("Запись", "Записи", "Записей")
-        var isExit = false
-
     }
 }
